@@ -2,9 +2,10 @@
 
 export const getPosts = (state) => state.posts;
 
+export const getPostsById = ({ posts }, postId) => posts.find((post) => post.id === postId);
+
 // actions
-const createActionName = (actionName) =>
-  `app/posts/${actionName}`;
+const createActionName = (actionName) => `app/posts/${actionName}`;
 
 // action creators
 

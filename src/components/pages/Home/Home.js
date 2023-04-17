@@ -7,8 +7,8 @@ const Home = () => {
     <Container className="me-auto">
       <div className="d-flex justify-content-between align-items-center">
         <h1>All Posts</h1>
-        <Link to="/post/add" style={{ height: '50%' }} className="btn btn-primary">
-          Read More
+        <Link to="/post/add" style={{ height: '50%' }} className="btn btn-outline-info">
+          Add Post
         </Link>
       </div>
       <Posts />
