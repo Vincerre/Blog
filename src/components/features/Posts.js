@@ -1,4 +1,4 @@
-import { getPosts } from '../../../redux/postsRedux';
+import { getPosts } from '../../redux/postsRedux';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Card } from 'react-bootstrap';
