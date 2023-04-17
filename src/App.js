@@ -17,10 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/post/:id" element={<PostPage />} />
         <Route path="/post/add" element={<PostAddPage />} />
-        <Route
-          path="/post/edit/:id"
-          element={<PostEditPage />}
-        />
+        <Route path="/post/edit/:id" element={<PostEditPage />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
