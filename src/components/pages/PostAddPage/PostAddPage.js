@@ -1,4 +1,4 @@
-import AddPostForm from '../../features/AddPostForm';
+import AddPostForm from '../AddPostForm/AddPostForm';
 
 const PostAddPage = () => {
   return (

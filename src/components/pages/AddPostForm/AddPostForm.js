@@ -1,18 +1,18 @@
-import TextInput from '../common/TextInput/TextInput';
+import TextInput from '../../common/TextInput/TextInput';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { addPost } from '../../redux/postsRedux';
+import { addPost } from '../../../redux/postsRedux';
 import { InputGroup } from 'react-bootstrap';
 
-const AddPostForm = () => {
+const AddPostForm = ({ action, actionText, ...props }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
-  const [date, setDate] = useState('');
-  const [description, setDescription] = useState('');
-  const [content, setContent] = useState('');
+  const [title, setTitle] = useState(props.title || '');
+  const [author, setAuthor] = useState(props.author || '');
+  const [date, setDate] = useState(props.date || '');
+  const [description, setDescription] = useState(props.description || '');
+  const [content, setContent] = useState(props.content || '');
 
   const handleForm = (e) => {
     e.preventDefault();

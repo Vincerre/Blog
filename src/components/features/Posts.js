@@ -7,11 +7,11 @@ const Posts = () => {
   const posts = useSelector(getPosts);
 
   return (
-    <div className="d-xl-flex flex-wrap gap-2 justify-content-between ">
+    <div className="row">
       {posts.map((post) => (
-        <Card key={post.id} style={{ width: '32%' }} className="mt-2">
-          <Card.Body className="d-flex flex-column justify-content-between">
-            <Card.Title className="mb-5">{post.title}</Card.Title>
+        <Card key={post.id} className="col-12 col-lg-4 px-4">
+          <Card.Body>
+            <Card.Title>{post.title}</Card.Title>
             <Card.Text>
               <p>
                 <b>Author: </b>
