@@ -1,5 +1,7 @@
+import EditPostForm from '../../features/EditPostForm';
+
 const PostEditPage = () => {
-  return <div>PostEditPage</div>;
+  return <EditPostForm />;
 };
 
 export default PostEditPage;
