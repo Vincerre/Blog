@@ -5,8 +5,9 @@ import { getPostsById, removePost } from '../../../redux/postsRedux';
 import { useSelector, useDispatch } from 'react-redux';
 import { Card, Button, Row, Container, Col } from 'react-bootstrap';
 import Modal from 'react-bootstrap/Modal';
+import { dateToString } from '../../../utils/dateToString';
 
-const PostPage = (props) => {
+const PostPage = () => {
   const dispatch = useDispatch();
 
   const { id } = useParams();
@@ -66,9 +67,9 @@ const PostPage = (props) => {
                     </p>
                     <p>
                       <b>Published: </b>
-                      {postData.publishedDate}
+                      {dateToString(postData.publishedDate)}
                     </p>
-                    <p>{postData.content}</p>
+                    <p dangerouslySetInnerHTML={{ __html: postData.content }}></p>
                   </Card.Text>
                 </Card.Body>
               </Card>

@@ -1,4 +1,3 @@
-import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
 
 const TextInput = (props) => {
