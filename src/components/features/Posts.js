@@ -3,9 +3,12 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Card, Row, Container, Col } from 'react-bootstrap';
 import { dateToString } from '../../utils/dateToString';
+import { getCategoryById } from '../../redux/postsRedux';
 
 const Posts = () => {
   const posts = useSelector(getPosts);
+  const catId = useSelector(posts.categoryId);
+  const catData = useSelector((state) => getCategoryById(state, catId));
 
   return (
     <Container>
@@ -23,6 +26,10 @@ const Posts = () => {
                   <p>
                     <b>Published: </b>
                     {dateToString(post.publishedDate)}
+                  </p>
+                  <p>
+                    <b>Category:</b>
+                    {}
                   </p>
                   <p>{post.shortDescription}</p>
                 </Card.Text>

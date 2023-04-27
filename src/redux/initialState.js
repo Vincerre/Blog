@@ -7,6 +7,7 @@ const initialState = {
       content: 'Main content of the article',
       publishedDate: new Date('02-24-2022'),
       author: 'John Doe',
+      categoryId: '3',
     },
     {
       id: '2',
@@ -16,6 +17,7 @@ const initialState = {
         'Main content of the article.Main content of the article.Main content of the article.Main content of the article.Main content of the article.Main content of the article.Main content of the article.Main content of the article.Main content of the article.',
       publishedDate: new Date('12-09-2023'),
       author: 'John Doe',
+      categoryId: '2',
     },
     {
       id: '3',
@@ -24,6 +26,7 @@ const initialState = {
       content: 'Main content of the article',
       publishedDate: new Date('10-02-2022'),
       author: 'John Doe',
+      categoryId: '2',
     },
     {
       id: '4',
@@ -32,6 +35,24 @@ const initialState = {
       content: 'Main content of the article',
       publishedDate: new Date('02-02-2022'),
       author: 'John Doe',
+      categoryId: '1',
+    },
+  ],
+  categories: [
+    {
+      id: 1,
+      categoryId: '1',
+      title: 'Sport',
+    },
+    {
+      id: 2,
+      categoryId: '2',
+      title: 'News',
+    },
+    {
+      id: 3,
+      categoryId: '3',
+      title: 'Movies',
     },
   ],
 };

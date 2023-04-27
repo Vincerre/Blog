@@ -1,8 +1,6 @@
 import { useState } from 'react';
-import TextInput from '../common/TextInput/TextInput';
 import { InputGroup } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
-
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import DatePicker from 'react-datepicker';
