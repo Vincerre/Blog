@@ -12,9 +12,9 @@ export const getPostsById = ({ posts }, postId) => posts.find((post) => post.id 
 //   }));
 
 export const getAllPosts = ({ posts, categories }) =>
-  state.posts.map((post) => ({
+  posts.map((post) => ({
     ...post,
-    category: state.categories.find((cat) => cat.id === post.categoryId),
+    category: categories.find((cat) => cat.id === post.categoryId),
   }));
 
 // actions
