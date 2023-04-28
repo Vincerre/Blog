@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <Container className="me-auto">
+    <Container>
       <div className="d-flex justify-content-between align-items-center">
         <h1>All Posts</h1>
         <Link to="/post/add" style={{ height: '50%' }} className="btn btn-outline-info">
