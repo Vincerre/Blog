@@ -4,7 +4,18 @@ import shortid from 'shortid';
 
 export const getPosts = (state) => state.posts;
 export const getPostsById = ({ posts }, postId) => posts.find((post) => post.id === postId);
-export const getCategoryById = ({ cats }, catId) => cats.find((cat) => cat.id === catId);
+
+// export const getAllPosts = ({ posts, categories }) =>
+//   posts.map((post) => ({
+//     ...post,
+//     category: categories.find((cat) => cat.id === post.categoryId),
+//   }));
+
+export const getAllPosts = ({ posts, categories }) =>
+  posts.map((post) => ({
+    ...post,
+    category: categories.find((cat) => cat.id === post.categoryId),
+  }));
 
 // actions
 const createActionName = (actionName) => `app/posts/${actionName}`;
