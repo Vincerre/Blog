@@ -40,18 +40,15 @@ const initialState = {
   ],
   categories: [
     {
-      id: 1,
-      categoryId: '1',
+      id: '1',
       title: 'Sport',
     },
     {
-      id: 2,
-      categoryId: '2',
+      id: '2',
       title: 'News',
     },
     {
-      id: 3,
-      categoryId: '3',
+      id: '3',
       title: 'Movies',
     },
   ],
