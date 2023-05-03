@@ -6,7 +6,6 @@ import 'react-quill/dist/quill.snow.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useForm } from 'react-hook-form';
-// import getAllCategories from '../../redux/categoriesRedux';
 import { useSelector } from 'react-redux';
 
 const PostForm = ({ action, actionText, ...props }) => {
@@ -20,7 +19,6 @@ const PostForm = ({ action, actionText, ...props }) => {
   const [categoryId, setCategoryId] = useState(props.category || '');
 
   const categories = useSelector((state) => state.categories);
-  console.log('cats', categories);
 
   const {
     register,

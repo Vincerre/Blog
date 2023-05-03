@@ -12,7 +12,7 @@ const PostPage = () => {
 
   const { id } = useParams();
   const postData = useSelector((state) => getPostsById(state, id));
-  console.log(postData);
+
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -59,22 +59,21 @@ const PostPage = () => {
                       </Link>
                     </div>
                   </Card.Title>
-
-                  <Card.Text className="w-75">
-                    <p>
+                  <div className="d-flex flex-column my-4">
+                    <span>
                       <b>Author: </b>
                       {postData.author}
-                    </p>
-                    <p>
-                      <p>
-                        <b>Category: </b>
-                        {postData.category}
-                      </p>
+                    </span>
+                    <span>
                       <b>Published: </b>
                       {dateToString(postData.publishedDate)}
-                    </p>
-                    <p dangerouslySetInnerHTML={{ __html: postData.content }}></p>
-                  </Card.Text>
+                    </span>
+                    <span>
+                      <b>Category: </b>
+                      {postData.category.title}
+                    </span>
+                    <span className="mt-4" dangerouslySetInnerHTML={{ __html: postData.content }}></span>
+                  </div>
                 </Card.Body>
               </Card>
             </Col>

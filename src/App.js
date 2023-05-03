@@ -8,6 +8,8 @@ import PageNotFound from './components/pages/PageNotFound/PageNotFound';
 import Header from './components/views/Header/Header';
 import Footer from './components/views/Footer/Footer';
 import Container from 'react-bootstrap/Container';
+import Categories from './components/pages/Categories/Categories';
+import CategoryPage from './components/pages/CategoryPage/CategoryPage';
 
 function App() {
   return (
@@ -15,12 +17,11 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/categories" element={<Categories />} />
+        <Route path="/category/:catTitle" element={<CategoryPage />} />
         <Route path="/post/:id" element={<PostPage />} />
         <Route path="/post/add" element={<PostAddPage />} />
-        <Route
-          path="/post/edit/:id"
-          element={<PostEditPage />}
-        />
+        <Route path="/post/edit/:id" element={<PostEditPage />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>

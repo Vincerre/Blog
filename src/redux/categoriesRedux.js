@@ -1,3 +1,7 @@
+// selectors
+
+export const getAllCategories = (state) => state.categories;
+
 export const getAllPosts = ({ posts, categories }) =>
   posts.map((post) => ({
     ...post,
