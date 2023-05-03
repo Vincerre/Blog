@@ -6,6 +6,8 @@ import 'react-quill/dist/quill.snow.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { useForm } from 'react-hook-form';
+// import getAllCategories from '../../redux/categoriesRedux';
+import { useSelector } from 'react-redux';
 
 const PostForm = ({ action, actionText, ...props }) => {
   const [title, setTitle] = useState(props.title || '');
@@ -15,6 +17,10 @@ const PostForm = ({ action, actionText, ...props }) => {
   const [content, setContent] = useState(props.content || '');
   const [dateError, setDateError] = useState(false);
   const [contentError, setContentError] = useState(false);
+  const [categoryId, setCategoryId] = useState(props.category || '');
+
+  const categories = useSelector((state) => state.categories);
+  console.log('cats', categories);
 
   const {
     register,
@@ -26,7 +32,7 @@ const PostForm = ({ action, actionText, ...props }) => {
     setContentError(!content);
     setDateError(!date);
     if (content && date) {
-      action({ title, author, publishedDate: date, shortDescription: description, content });
+      action({ title, author, publishedDate: date, shortDescription: description, content, categoryId });
     }
   };
 
@@ -74,6 +80,18 @@ const PostForm = ({ action, actionText, ...props }) => {
           <Form.Label>Date</Form.Label>
           <DatePicker selected={date} onChange={(date) => setDate(date)} dateFormat="dd/MM/yyyy" />
           {dateError && <small className="d-block form-text text-danger">Choose date!</small>}
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Category</Form.Label>
+          <Form.Select
+            value={categoryId}
+            onChange={(e) => setCategoryId(e.target.value)}
+            aria-label="Default select example">
+            <option>Select category</option>
+            <option value={categories[0].id}>Sport</option>
+            <option value={categories[1].id}>News</option>
+            <option value={categories[2].id}>Movies</option>
+          </Form.Select>
         </Form.Group>
         <Form.Group className="mb-4" controlId="formBasicEmail">
           <Form.Label>Description</Form.Label>

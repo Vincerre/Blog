@@ -9,7 +9,6 @@ const EditPostForm = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const postData = useSelector((state) => getPostsById(state, id));
-  console.log(postData);
 
   const handleForm = (post) => {
     dispatch(editPost({ ...post, id }));
@@ -27,6 +26,7 @@ const EditPostForm = () => {
         date={postData.publishedDate}
         description={postData.shortDescription}
         content={postData.content}
+        category={postData.categoryId}
       />
     );
 };

@@ -12,7 +12,7 @@ const PostPage = () => {
 
   const { id } = useParams();
   const postData = useSelector((state) => getPostsById(state, id));
-
+  console.log(postData);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -66,6 +66,10 @@ const PostPage = () => {
                       {postData.author}
                     </p>
                     <p>
+                      <p>
+                        <b>Category: </b>
+                        {postData.category}
+                      </p>
                       <b>Published: </b>
                       {dateToString(postData.publishedDate)}
                     </p>
