@@ -11,7 +11,7 @@ const CategoryPage = () => {
 
   const postsByCatId = useSelector((state) => getPostsByCategories(state, catTitle));
 
-  if (postsByCatId.length === 0)
+  if (!postsByCatId.length)
     return (
       <div className="d-flex p-4">
         <h3>No posts in this category</h3>
