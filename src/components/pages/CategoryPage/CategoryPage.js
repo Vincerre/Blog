@@ -1,5 +1,5 @@
 import { useParams } from 'react-router';
-import { getAllPosts, getPostsByCategories } from '../../../redux/categoriesRedux';
+import { getPostsByCategories } from '../../../redux/categoriesRedux';
 import { useSelector } from 'react-redux';
 import { Row } from 'react-bootstrap';
 import Post from '../../features/Post';
