@@ -2,7 +2,6 @@ import { useParams } from 'react-router';
 import { getAllPosts } from '../../../redux/categoriesRedux';
 import { useSelector } from 'react-redux';
 import { Row } from 'react-bootstrap';
-import { Navigate } from 'react-router-dom';
 import Post from '../../features/Post';
 
 const CategoryPage = () => {

@@ -17,6 +17,7 @@ const PostForm = ({ action, actionText, ...props }) => {
   const [dateError, setDateError] = useState(false);
   const [contentError, setContentError] = useState(false);
   const [categoryId, setCategoryId] = useState(props.category || '');
+  const [catError, setCatError] = useState(false);
 
   const categories = useSelector((state) => state.categories);
 
@@ -29,7 +30,8 @@ const PostForm = ({ action, actionText, ...props }) => {
   const handleForm = () => {
     setContentError(!content);
     setDateError(!date);
-    if (content && date) {
+    setCatError(!categoryId);
+    if (content && date && categoryId) {
       action({ title, author, publishedDate: date, shortDescription: description, content, categoryId });
     }
   };
@@ -90,6 +92,7 @@ const PostForm = ({ action, actionText, ...props }) => {
             <option value={categories[1].id}>News</option>
             <option value={categories[2].id}>Movies</option>
           </Form.Select>
+          {catError && <small className="d-block form-text text-danger">Choose category!</small>}
         </Form.Group>
         <Form.Group className="mb-4" controlId="formBasicEmail">
           <Form.Label>Description</Form.Label>
