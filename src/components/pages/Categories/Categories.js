@@ -6,7 +6,6 @@ import { ListGroup } from 'react-bootstrap';
 
 const Categories = () => {
   const categories = useSelector((state) => getAllCategories(state));
-  console.log(categories);
   return (
     <Container>
       <div className="d-flex justify-content-center">

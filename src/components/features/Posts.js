@@ -6,7 +6,6 @@ import { getAllPosts } from '../../redux/categoriesRedux';
 
 const Posts = () => {
   const posts = useSelector((state) => getAllPosts(state));
-  console.log(posts);
   return (
     <Container>
       <Row className="gx-5">

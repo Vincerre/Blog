@@ -8,6 +8,17 @@ export const getAllPosts = ({ posts, categories }) =>
     category: categories.find((cat) => cat.id === post.categoryId),
   }));
 
+export const getPostsByCategories = ({ posts, categories }, catTitle) => {
+  const postsByCat = posts.map((post) => ({
+    ...post,
+    category: categories.find((cat) => cat.id === post.categoryId),
+  }));
+  if (!postsByCat) return undefined;
+  else {
+    return postsByCat.filter((post) => post.category.title === catTitle);
+  }
+};
+
 const categoriesReducer = (statePart = [], action) => {
   switch (action.type) {
     default:
